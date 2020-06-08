@@ -1,4 +1,4 @@
-module.exports.getDate=getDate;//export getDate() function
+//module.exports.getDate=getDate;//export getDate() function
 //module.export is a Javascript object.
 // And objects have properties and methods associated with it.
 // So that means that instead of simply binding the entire object to our getDate function, I could say module
@@ -10,26 +10,25 @@ module.exports.getDate=getDate;//export getDate() function
 // One is called getDay and one is called getDate. Now inside our app.js, instead of saying just run
 // the function that's bound to the exports from our data module
 // we can say run the function that's bound to our date module .getDate.
-function getDate(){
-  let today=new Date();
-  let options={
+//module.exports same as exports
+exports.getDate = function(){
+  const today=new Date();
+  const options={
     weekday: "long",
     day: "numeric",
     month: "long"
   };
-  let day=today.toLocaleDateString("en-US", options);
-  return day;
-}
+  return today.toLocaleDateString("en-US", options);
+};
 
-module.exports.getDay=getDay;
-function getDay(){
-  let today=new Date();
-  let options={
+//module.exports.getDay=getDay;
+exports.getDay = function(){
+  const today=new Date();
+  const options={
     weekday: "long"
   };
-  let day=today.toLocaleDateString("en-US", options);
-  return day;
-}
+  return today.toLocaleDateString("en-US", options);
+};
 
 
-console.log(module.exports);
+//console.log(module.exports);
